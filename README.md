@@ -4,28 +4,32 @@
 
 ![Status](https://img.shields.io/badge/Status-Beta-blue) ![Stack](https://img.shields.io/badge/Tech-PyData%20|%20LLMs-purple)
 
-**FRIDAY-ML** is an interactive educational workspace designed to bridge the gap between machine learning theory and practical implementation.
+**FRIDAY-ML** is an interactive educational workspace designed to bridge the gap between machine learning theory and practical implementation in Python.
 
-By combining the best data sciennce tools in the PyData ecosystem and the support of [**Claude Code**](https://code.claude.com/docs/en/vs-code) or [**Mistral Vibe**](https://mistral.ai/news/devstral-2-vibe-cli), we allow learners to focus on *principles* rather than syntax errors.
+By combining the best data science tools in the PyData ecosystem and the support of [**Claude Code**](https://code.claude.com/docs/en/vs-code) or [**Mistral Vibe**](https://mistral.ai/news/devstral-2-vibe-cli), we allow learners to focus on principles rather than syntax errors.
 
-> **The Core Philosophy:** "Write less, read more, evaluate everything."
+> [!Tip]
+> _Think more, write less, read and evaluate everything._
 
-## 🎯 The Mission
+## Learn how to do machine learing in Python with support from an AI agent
 
-Traditional ML courses often trap students in _dependency hell_ or _syntax fatigue_, causing them to lose sight of the mathematical and logical principles. FRIDAY-ML flips this model:
+Traditional machine learning (ML) courses often trap students in _dependency hell_ or _syntax fatigue_, causing them to lose sight of the mathematical and logical principles. FRIDAY-ML flips this model:
 
-1.  **AI writes the boilerplate code:** An AI agent handles the heavy Python lifting.
+1.  **AI writes most of the Python code:** An AI agent helps you write the machine learning code in Python.
 2.  **You learn how to think like a data scientist:** Using [Instroduction to Statistical Learning](https://www.statlearning.com/) as our stepping stone, your AI-assistant F.R.I.D.A.Y. challenges you to dictate without giving away the answer too much.
+    - **Conceptualize:** Think about what you want to do (_"I need to reduce variance in this model"_).
+    - **Prompt:** Instruct the AI agent to implement a specific validation strategy (_"Set up a K-Fold cross-validation loop using scikit-learn"_).
+    - **Audit:** Read the Python code. Does the code actually do what you asked? Are the data transformations correct?
+    - **Execute:** Run the reactive cell and analyze the visualization.
 3.  **You learn how to review the code:** Your primary job is to read the generated Python, understand the data flow, and evaluate the results. The aim is to become proficient in reading Python code. As with natural languages, it is easier to obtain passive, working knowledge.
 
-## 🛠 Tech Stack
+## Our stack
 
-* **[Marimo](https://github.com/marimo-team/marimo):** A next-generation reactive notebook for Python. No more hidden state or out-of-order execution errors.
+* **[Marimo](https://github.com/marimo-team/marimo):** a next-generation reactive notebook for Python. No more hidden state or out-of-order execution errors.
 * **[Positron](https://positron.posit.co/):** the best open source data science IDE (integrated development environemnt) that unifies exploratory data analysis and production work.
-* **[scikit-learn](https://scikit-learn.org/):** The standard library for classical machine learning in Python - linear models, tree-based models, clustering, and model evaluation.
-* **[AutoGluon](https://auto.gluon.ai/):** State-of-the-art AutoML to handle feature engineering and model selection, allowing us to focus on high-level architecture.
-* **AI Coding Agents:** Integration with [**Anthropic's Claude Code**](https://code.claude.com/docs/en/vs-code) or [**Mistral's Vibe with Devstral**](https://mistral.ai/news/devstral-2-vibe-cli) (Mistral) to act as your pair programmer.
-
+* **[scikit-learn](https://scikit-learn.org/):** the standard library for tabular machine learning in Python - linear models, tree-based models, clustering, and model evaluation.
+* **[AutoGluon](https://auto.gluon.ai/):** an AutoML library to help you with experimentation and try many models in one go.
+* **AI Coding Agents:** Integration with [**Anthropic's Claude Code**](https://code.claude.com/docs/en/vs-code) or [**Mistral's Vibe with Devstral**](https://mistral.ai/news/devstral-2-vibe-cli) to act as your pair programmer assistant.
 
 <details>
 <summary>Why we use Marimo</summary>
@@ -45,35 +49,26 @@ Traditional notebooks such as Jupyter notebooks as well as commercial notebooks 
 For more details, see [this blogpost](https://marimo.io/blog/claude-code)
 </details>
 
+## Getting started
 
-## 📚 Approach to AI-assisted learning
+> [!NOTE]
+> 
+> **Prerequisites**
+> * Python 3.12+
+> * An account and API key for Anthropic Claude Code or Mistral Vibe Devstral.
 
-This workspace is structured to accompany a standard **Introduction to Machine Learning** curriculum. The workspace challenges you to apply theoretical concepts to real data.
+<details>
+<summary><b>Install Positron</b></summary>
 
-1.  **Conceptualize:** Define your hypothesis (e.g., "I need to reduce variance in this model").
-2.  **Prompt:** Instruct the AI agent to implement a specific validation strategy (e.g., "Set up a K-Fold cross-validation loop using AutoGluon").
-3.  **Audit:** Read the Marimo cell. Does the code actually do what you asked? Are the data transformations correct?
-4.  **Execute:** Run the reactive cell and analyze the visualization.
+<br>[Positron](https://positron.posit.co/) is an open-source data science IDE built on VS Code, designed specifically for data science workflows with enhanced support for Python, R, and interactive notebooks.
 
-
-## 🚀 Getting Started
-
-### Prerequisites
-* Python 3.12+
-* An account and API key for Anthropic Claude Code or Mistral Vibe Devstral.
-* Positron IDE (recommended for data science workflows)
-
-### Setting Up Positron
-
-[Positron](https://positron.posit.co/) is an open-source data science IDE built on VS Code, designed specifically for data science workflows with enhanced support for Python, R, and interactive notebooks.
-
-#### Installing Positron
+### Installing Positron
 
 1. Download Positron from the [official website](https://positron.posit.co/)
 2. Install the application for your operating system (macOS, Windows, or Linux)
 3. Launch Positron
 
-#### Importing the FRIDAY-ML Code Profile
+### Importing the FRIDAY-ML Code Profile
 
 This repository includes a pre-configured code profile ([friday-ml.code-profile](friday-ml.code-profile)) with recommended settings and extensions for the best learning experience.
 
@@ -90,9 +85,12 @@ The profile includes:
 - Pre-configured Python interpreter settings
 - Integrated viewer for web-based visualizations
 
-### Installation
+</details>
 
-1.  **Clone the repository:**
+<details>
+<summary><b>Install FRIDAY-ML</b></summary>
+    <br>
+    1.  **Clone the repository:**
     ```bash
     git clone https://github.com/yourusername/FRIDAY-ML.git
     cd FRIDAY-ML
@@ -134,31 +132,21 @@ The profile includes:
     # or
     MISTRAL_API_KEY=...
     ```
+</details>
 
-### Usage
 
-#### Running Marimo Notebooks
 
-There are two recommended ways to work with marimo notebooks in this workspace:
 
-##### Opening a Marimo Notebook in Positron
+   
 
-To open any marimo notebook (`.py` file in the `notebooks/` directory):
+## Using FRIDAY-ML
 
-1. **Navigate to the notebook file** in the Positron file explorer (e.g., `notebooks/mnist.py`)
-2. **Click the marimo icon** in the top-right corner of the editor:
+There are two options to work with marimo notebooks in this workspace:
 
-   ![Open Marimo Icon](open-marimo.png)
+### Option 1: Positron with Marimo Extension (Recommended)
 
-3. The notebook will open in an integrated panel within Positron, showing all cells and outputs
+This is the default and most integrated approach for data science workflows. You benefit from the unified Integrated Development Environment (IDE) experience for editing and running notebooks. Positron also has a [data explorer](https://positron.posit.co/data-explorer.html) function to browse `.csv` and `.parquet` files. To use this workflow:
 
-Alternatively, you can right-click on any `.py` marimo notebook file and select **"Open with Marimo"** from the context menu.
-
-##### Option 1: Positron with Marimo Extension (Recommended)
-
-This is the default and most integrated approach for data science workflows.
-
-Once you've imported the code profile:
 1. Open the FRIDAY-ML folder in Positron
 2. The Python interpreter should automatically use the `.venv` created by `uv`
 3. Open any `.py` marimo notebook file (e.g., `notebooks/mnist.py`)
@@ -166,17 +154,25 @@ Once you've imported the code profile:
 5. Use Claude Code in the panel or sidebar for AI-assisted development
 6. All notebook outputs and visualizations appear inline in the editor
 
-**Benefits:**
-- Unified IDE experience for editing and running notebooks
-- Inline visualization and outputs
-- Seamless integration with Claude Code
-- No need to switch between windows
+> [!TIP]
+>
+> You can open a marimo notebook (`.py` file in the `notebooks/` directory) using the UI: 
+>
+> 1. **Navigate to the notebook file** in the Positron file explorer (e.g., `notebooks/mnist.py`)
+> 2. **Click the marimo icon** in the top-right corner of the editor:
+>
+>   ![Open Marimo Icon](open-marimo.png)
+> 
+>3. The notebook will open in an integrated panel within Positron, showing all cells and outputs
+>
+> Alternatively, you can right-click on any `.py` marimo notebook file and select **"Open with Marimo"** from the context menu.
 
-##### Option 2: Marimo UI with Watch Mode
 
-This option uses marimo's native web interface with automatic reloading, ideal for collaborative work with Claude Code.
 
-**Setup:**
+### Option 2: Marimo UI with Watch Mode
+
+This option uses marimo's native web interface with automatic reloading, directly from the terminal. It gives you full marimo interactive features in the browser, which is more easy going than Positron.
+This workflow is described in the [marimo blog post](https://marimo.io/blog/claude-code). To use it, do the following:
 
 1. **Terminal 1 - Start marimo in watch mode:**
    ```bash
@@ -187,7 +183,7 @@ This option uses marimo's native web interface with automatic reloading, ideal f
    ```bash
    uv run marimo edit notebooks/mnist.py --watch
    ```
-
+   
    This opens the marimo notebook in your browser and watches for file changes.
 
 2. **Terminal 2 - Launch Claude Code:**
@@ -197,13 +193,7 @@ This option uses marimo's native web interface with automatic reloading, ideal f
 
    Use Claude to edit the notebook file. The `--watch` flag ensures marimo automatically reloads changes in the browser.
 
-**Benefits:**
-- Real-time preview of Claude's edits in the marimo UI
-- Full marimo interactive features in the browser
-- Clear separation between AI editing and visualization
-- Enables "human-computer symbiosis" as described in the [marimo blog post](https://marimo.io/blog/claude-code)
-
-#### Viewing Training Logs
+### Viewing tensorboard training logs (only for `mnist.py` notebook)
 
 To view TensorBoard logs from your training runs:
 
@@ -211,11 +201,11 @@ To view TensorBoard logs from your training runs:
 uv run tensorboard --logdir logs/
 ```
 
-### Using the FRIDAY Skill
+## Using the FRIDAY Skill
 
 The FRIDAY skill is a specialized AI tutor built into this workspace, designed to coach you through machine learning concepts without getting bogged down in Python syntax.
 
-#### What is the FRIDAY Skill?
+### What is the FRIDAY Skill?
 
 The FRIDAY skill helps you understand ML principles by:
 - Explaining concepts in plain language
@@ -224,7 +214,7 @@ The FRIDAY skill helps you understand ML principles by:
 - Guiding you through theoretical foundations
 - Connecting mathematical concepts to practical implementation
 
-#### How to Invoke It
+### How to use it
 
 When working with Claude Code or Vibe, invoke the FRIDAY skill by typing:
 
@@ -240,37 +230,30 @@ or include it in your prompts:
 /friday Help me understand why cross-validation matters
 ```
 
-#### When to Use FRIDAY vs. Direct Code Generation
+### When to use FRIDAY vs. direct code generation
 
 - **Use `/friday`** when you want to understand the "why" behind a concept or need conceptual guidance before implementation
 - **Use direct prompts** when you want the AI agent to generate or modify code
 
-#### Example Workflow
+> [!TIP]
+>
+> #### Example Workflow
+>
+> 1. **Start with a conceptual question:**
+>   ```bash
+>   /friday Why would I use L2 regularization instead of L1 for this regression problem?
+>   ```
+>
+> 2. **FRIDAY explains the concept** in plain language, focusing on principles rather than syntax
+>
+> 3. **Once you understand, prompt for implementation:**
+>   ```bash
+>   Now implement Ridge regression with 5-fold cross-validation on the housing dataset
+>   ```
+>
+>4. **Audit the generated code** with your new understanding of the underlying principles
+>
+> This separation between learning and coding maintains the "Write less, read more, evaluate everything" philosophy by ensuring you understand concepts before generating implementation code.
 
-1. **Start with a conceptual question:**
-   ```bash
-   /friday Why would I use L2 regularization instead of L1 for this regression problem?
-   ```
-
-2. **FRIDAY explains the concept** in plain language, focusing on principles rather than syntax
-
-3. **Once you understand, prompt for implementation:**
-   ```bash
-   Now implement Ridge regression with 5-fold cross-validation on the housing dataset
-   ```
-
-4. **Audit the generated code** with your new understanding of the underlying principles
-
-This separation between learning and coding maintains the "Write less, read more, evaluate everything" philosophy by ensuring you understand concepts before generating implementation code.
-
-## 🧠 For Learners: How to Succeed
-This is not a "Magic Button" tool. It is a coaching tool. To succeed, you must adopt the mindset of an Analytics Translator or Data Scientist:
-- Don't trust F.R.I.D.A.Y. blindly. It makes mistakes. If F.R.I.D.A.Y. imports a library that doesn't exist, it is your job to catch it.
-- Read the Code aloud. Before running a cell, try to explain what the Python code is doing in plain English.
-- Focus on the "Why". Why did AutoGluon select a Weighted Ensemble? Why did the AI suggest dropping that column?
-
-## Attribution
-We salute the creators of the ['real' F.R.I.D.A.Y.](https://marvelcinematicuniverse.fandom.com/wiki/F.R.I.D.A.Y.), with a nerdy wink of an eye.
-
-## 📄 License
-This project is licensed under the MIT License.
+## Attribution & license 
+We salute the creators of the ['real' F.R.I.D.A.Y.](https://marvelcinematicuniverse.fandom.com/wiki/F.R.I.D.A.Y.), with a nerdy wink of an eye. This project is licensed under the MIT License.
