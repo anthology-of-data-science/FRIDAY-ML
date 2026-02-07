@@ -12,7 +12,6 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "altair>=6.0.0",
-    "autogluon>=1.5.0",
     "duckdb>=1.4.4",
     "marimo>=0.19.7",
     "polars>=1.37.1",

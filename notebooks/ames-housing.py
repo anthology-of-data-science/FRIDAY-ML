@@ -1,12 +1,13 @@
 import marimo
 
-__generated_with = "0.19.7"
+__generated_with = "0.19.9"
 app = marimo.App(width="medium")
 
 
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 
@@ -40,6 +41,7 @@ def _():
     from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
     from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
     import numpy as np
+
     return (pl,)
 
 
@@ -54,7 +56,7 @@ def _(mo):
 @app.cell
 def _(pl):
     # Load the Ames housing dataset
-    df = pl.read_csv("data/ames-housing.csv")
+    df = pl.read_csv("../data/ames-housing.csv")
 
     print(f"Dataset shape: {df.shape}")
     print(f"Number of features: {len(df.columns) - 1}")

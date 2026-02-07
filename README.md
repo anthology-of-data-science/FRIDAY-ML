@@ -13,7 +13,7 @@ By combining the best data science tools in the PyData ecosystem and the support
 
 ## Learn how to do machine learing in Python with support from an AI agent
 
-Traditional machine learning (ML) courses often trap students in _dependency hell_ or _syntax fatigue_, causing them to lose sight of the mathematical and logical principles. FRIDAY-ML flips this model:
+Traditional machine learning (ML) courses often trap students in dependency hell or syntax fatigue, causing them to lose sight of the mathematical and logical principles. FRIDAY-ML flips this model:
 
 1.  **AI writes most of the Python code:** An AI agent helps you write the machine learning code in Python.
 2.  **You learn how to think like a data scientist:** Using [Instroduction to Statistical Learning](https://www.statlearning.com/) as our stepping stone, your AI-assistant F.R.I.D.A.Y. challenges you to dictate without giving away the answer too much.
@@ -25,14 +25,26 @@ Traditional machine learning (ML) courses often trap students in _dependency hel
 
 ## Our stack
 
-* **[Marimo](https://github.com/marimo-team/marimo):** a next-generation reactive notebook for Python. No more hidden state or out-of-order execution errors.
-* **[Positron](https://positron.posit.co/):** the best open source data science IDE (integrated development environemnt) that unifies exploratory data analysis and production work.
+* **[Positron](https://positron.posit.co/):** the best open source data science IDE (integrated development environemnt) that unifies exploratory data analysis, machine learning and a fully integrated AI assistant.
+* **[marimo](https://github.com/marimo-team/marimo):** a next-generation reactive notebook for Python. No more hidden state or out-of-order execution errors.
 * **[scikit-learn](https://scikit-learn.org/):** the standard library for tabular machine learning in Python - linear models, tree-based models, clustering, and model evaluation.
-* **[AutoGluon](https://auto.gluon.ai/):** an AutoML library to help you with experimentation and try many models in one go.
-* **AI Coding Agents:** Integration with [**Anthropic's Claude Code**](https://code.claude.com/docs/en/vs-code) or [**Mistral's Vibe with Devstral**](https://mistral.ai/news/devstral-2-vibe-cli) to act as your pair programmer assistant.
 
 <details>
-<summary>Why we use Marimo</summary>
+<summary>Why we use Positron</summary>
+
+While Positron is actually built on the same foundation as VS Code (Code OSS), it removes the "assembly required" aspect of setting up a data science environment. If VS Code is a box of Lego bricks, Positron is the pre-built model designed specifically for R and Python.
+
+Positron comes with specialized data panes, similar to those in RStudio.
+
+- **Data Explorer:** a built-in spreadsheet viewer that handles millions of rows without lagging. You can filter, sort, and search dataframes without writing a single line of df.head(). Open `.parquet` files directly by just double-clicking.
+
+- **Variables Pane:** a real-time view of your environment (objects, types, and values) that is much more intuitive than the standard "Variables" tab in the VS Code debugger.
+
+- **Plots & Viewer:** Dedicated spaces for visualizations and HTML widgets (like Leaflet or Shiny apps) that don't get lost in your editor tabs.
+</details>
+
+<details>
+<summary>Why we use marimo</summary>
 
 Traditional notebooks such as Jupyter notebooks as well as commercial notebooks such as Deepnote and Hex are ill-suited for use with agentic coding tools.
 
@@ -51,64 +63,36 @@ For more details, see [this blogpost](https://marimo.io/blog/claude-code)
 
 ## Getting started
 
-> [!NOTE]
-> 
-> **Prerequisites**
-> * Python 3.12+
-> * An account and API key for Anthropic Claude Code or Mistral Vibe Devstral.
-
-<details>
-<summary><b>Install Positron</b></summary>
-
-<br>[Positron](https://positron.posit.co/) is an open-source data science IDE built on VS Code, designed specifically for data science workflows with enhanced support for Python, R, and interactive notebooks.
-
-### Installing Positron
+### Install Positron
 
 1. Download Positron from the [official website](https://positron.posit.co/)
 2. Install the application for your operating system (macOS, Windows, or Linux)
 3. Launch Positron
 
-### Importing the FRIDAY-ML Code Profile
+### Add the marimo extension
 
-This repository includes a pre-configured code profile ([friday-ml.code-profile](friday-ml.code-profile)) with recommended settings and extensions for the best learning experience.
+1. Click on the Extensions icon on the left-sidebar
+2. Search for the [marimo](https://open-vsx.org/extension/marimo-team/vscode-marimo) and install the extension
 
-To import the profile:
 
-1. Open Positron
-2. Go to **File > Preferences > Profiles > Import Profile...**
-3. Select the `friday-ml.code-profile` file from the repository root
-4. Click **Create Profile** to complete the import
+### Install FRIDAY-ML
 
-The profile includes:
-- Optimized theme and editor settings for data science
-- Essential extensions: Claude Code, Ruff, Marimo, and more
-- Pre-configured Python interpreter settings
-- Integrated viewer for web-based visualizations
+1. Download FRIDAY-ML [here](https://github.com/EAISI/FRIDAY-ML/archive/refs/heads/main.zip)
+2. Unzip the files and move the whole folder to working directory
+3. Go back to Positron and add the folder to the workspace via `File > Add Folder to Workspace...`
 
-</details>
+### Install uv (if not already installed)
 
-<details>
-<summary><b>Install FRIDAY-ML</b></summary>
-    <br>
-    1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/yourusername/FRIDAY-ML.git
-    cd FRIDAY-ML
+1. Open a terminal in Positron via `Terminal > New Terminal`
+2. Run the following command in the terminal:
+
+    - macOS/Linux: `curl -LsSf https://astral.sh/uv/install.sh | sh`
+    - Windows: `powershell -c "irm https://astral.sh/uv/install.ps1 | iex"`
     ```
 
-2.  **Install uv (if not already installed):**
+###  Install Python dependencies
 
-    macOS/Linux:
-    ```bash
-    curl -LsSf https://astral.sh/uv/install.sh | sh
-    ```
-
-    Windows:
-    ```powershell
-    powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
-    ```
-
-3.  **Install dependencies:**
+In the same terminal, install the Python dependencies for FRIDAY-ML
 
     For standard installation:
     ```bash
@@ -125,33 +109,16 @@ The profile includes:
     uv sync --extra tf
     ```
 
-4.  **Set Environment Variables:**
-    Create a `.env` file and add your API keys:
-    ```bash
-    ANTHROPIC_API_KEY=sk-ant-...
-    # or
-    MISTRAL_API_KEY=...
-    ```
-</details>
 
+## Using FRIDAY-ML with Positron Assistant
 
-
-
-   
-
-## Using FRIDAY-ML
-
-There are two options to work with marimo notebooks in this workspace:
-
-### Option 1: Positron with Marimo Extension (Recommended)
-
-This is the default and most integrated approach for data science workflows. You benefit from the unified Integrated Development Environment (IDE) experience for editing and running notebooks. Positron also has a [data explorer](https://positron.posit.co/data-explorer.html) function to browse `.csv` and `.parquet` files. To use this workflow:
+Once you have installed all the software components you can start using FRIDAY-ML with Positron Assistant.
 
 1. Open the FRIDAY-ML folder in Positron
 2. The Python interpreter should automatically use the `.venv` created by `uv`
-3. Open any `.py` marimo notebook file (e.g., `notebooks/mnist.py`)
-4. The integrated Marimo extension allows you to run and edit notebooks directly in Positron
-5. Use Claude Code in the panel or sidebar for AI-assisted development
+3. Open any `.py` marimo notebook file (e.g., `notebooks/ames-housing.py`)
+4. The integrated marimo extension allows you to run and edit notebooks directly in Positron
+5. Use Positron Assistant to invoke `/friday` (more details below)
 6. All notebook outputs and visualizations appear inline in the editor
 
 > [!TIP]
@@ -163,66 +130,22 @@ This is the default and most integrated approach for data science workflows. You
 >
 >   ![Open Marimo Icon](open-marimo.png)
 > 
->3. The notebook will open in an integrated panel within Positron, showing all cells and outputs
+> 3. The notebook will open in an integrated panel within Positron, showing all cells and outputs
 >
 > Alternatively, you can right-click on any `.py` marimo notebook file and select **"Open with Marimo"** from the context menu.
 
 
+### Using the `/friday` prompt
 
-### Option 2: Marimo UI with Watch Mode
+The FRIDAY skill is an AI tutor built into this workspace, designed to coach you through machine learning concepts without getting bogged down in Python syntax. It helps you understand ML principles by:
 
-This option uses marimo's native web interface with automatic reloading, directly from the terminal. It gives you full marimo interactive features in the browser, which is more easy going than Positron.
-This workflow is described in the [marimo blog post](https://marimo.io/blog/claude-code). To use it, do the following:
-
-1. **Terminal 1 - Start marimo in watch mode:**
-   ```bash
-   uv run marimo edit <notebook>.py --watch
-   ```
-
-   For example:
-   ```bash
-   uv run marimo edit notebooks/mnist.py --watch
-   ```
-   
-   This opens the marimo notebook in your browser and watches for file changes.
-
-2. **Terminal 2 - Launch Claude Code:**
-   ```bash
-   claude
-   ```
-
-   Use Claude to edit the notebook file. The `--watch` flag ensures marimo automatically reloads changes in the browser.
-
-### Viewing tensorboard training logs (only for `mnist.py` notebook)
-
-To view TensorBoard logs from your training runs:
-
-```bash
-uv run tensorboard --logdir logs/
-```
-
-## Using the FRIDAY Skill
-
-The FRIDAY skill is a specialized AI tutor built into this workspace, designed to coach you through machine learning concepts without getting bogged down in Python syntax.
-
-### What is the FRIDAY Skill?
-
-The FRIDAY skill helps you understand ML principles by:
 - Explaining concepts in plain language
 - Breaking down complex algorithms into digestible steps
 - Answering "why" questions about model behavior
 - Guiding you through theoretical foundations
 - Connecting mathematical concepts to practical implementation
 
-### How to use it
-
-When working with Claude Code or Vibe, invoke the FRIDAY skill by typing:
-
-```bash
-/friday
-```
-
-or include it in your prompts:
+You can invoke it by typing `/friday` in Positron assistant or include it in your prompts:
 ```bash
 /friday Why does my model have high variance?
 /friday Explain the bias-variance tradeoff in this context
@@ -256,4 +179,4 @@ or include it in your prompts:
 > This separation between learning and coding maintains the "Write less, read more, evaluate everything" philosophy by ensuring you understand concepts before generating implementation code.
 
 ## Attribution & license 
-We salute the creators of the ['real' F.R.I.D.A.Y.](https://marvelcinematicuniverse.fandom.com/wiki/F.R.I.D.A.Y.), with a nerdy wink of an eye. This project is licensed under the MIT License.
+We salute the creators of the ['real' F.R.I.D.A.Y.](https://marvelcinematicuniverse.fandom.com/wiki/F.R.I.D.A.Y.), with a nerdy wink of an eye. and also because most lectures as [EAISI Academy](https://www.tue.nl/en/education/professional-education/current-programs/eaisi-academy) are held on Fridays. This project is licensed under the MIT License.

@@ -9,7 +9,6 @@ Philosophy: *"Write less, read more, evaluate everything"* - AI agents write boi
 - **Marimo**: Reactive Python notebooks (`.py` files, not `.ipynb`)
 - **Positron**: Recommended IDE for data science workflows
 - **scikit-learn**: Standard library for classical ML (linear models, trees, clustering)
-- **AutoGluon**: AutoML for feature engineering and model selection
 - **TensorFlow/Keras**: Deep learning with TFDS integration
 - **Polars**: Data manipulation library
 - **Altair**: Declarative visualization library
@@ -39,6 +38,7 @@ FRIDAY-ML/
 ├── data/              # Datasets (*.csv files)
 ├── logs/              # TensorBoard training logs
 ├── references/        # Reference docs and examples
+│   ├── altair/        # 8 comprehensive Altair notebooks
 │   └── polars/        # 19 comprehensive Polars notebooks
 └── .claude/
     ├── CLAUDE.md      # This file - quick reference
@@ -113,7 +113,8 @@ model.fit(train, callbacks=[tf.keras.callbacks.TensorBoard(log_dir=log_dir)])
 - **[code-style.md](.claude/rules/code-style.md)** - Python standards and Polars patterns
 - **[marimo.md](.claude/rules/marimo.md)** - Marimo notebook best practices
 - **[references/polars/](references/polars/)** - 19 comprehensive Polars examples
+- **[references/altair/](references/altair/)** - 8 comprehensive Polars examples
 
 ## Python Version
 
-Requires Python 3.13+ (specified in pyproject.toml)
+Requires Python 3.12+ (specified in pyproject.toml)
